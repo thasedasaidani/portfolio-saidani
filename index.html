@@ -1,179 +1,174 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Saidani Thaseda — Ingénieure SI</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thaseda SAIDANI | Ingénieure SI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --accent: #b696ff;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.6;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
+        
+        /* Header */
+        header {
+            background: rgba(15, 23, 42, 0.9);
+            padding: 20px 0;
+            position: sticky; top: 0; z-index: 100;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero { padding: 80px 0; display: flex; align-items: center; gap: 40px; }
+        .hero-text h1 { font-size: 3.5rem; margin: 0; }
+        .hero-text span { color: var(--primary); }
+        .btn {
+            display: inline-block; padding: 12px 25px; background: var(--primary);
+            color: white; text-decoration: none; border-radius: 8px; margin-top: 20px;
+        }
+
+        /* Sections */
+        section { padding: 60px 0; }
+        h2 { border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 30px; }
+
+        /* Grid Cards */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card {
+            background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
+        }
+        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        
+        .tag {
+            display: inline-block; background: rgba(59, 130, 246, 0.2);
+            color: var(--primary); padding: 4px 10px; border-radius: 4px;
+            font-size: 0.8rem; margin: 5px 5px 0 0;
+        }
+
+        /* Timeline */
+        .timeline-item { margin-bottom: 30px; position: relative; padding-left: 20px; border-left: 2px solid var(--primary); }
+        .time { color: var(--primary); font-weight: bold; font-size: 0.9rem; }
+
+        footer { text-align: center; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #64748b; }
+    </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#hero">Saidani Thaseda</a>
-      <nav class="nav" id="nav">
-        <a href="#about">À propos</a>
-        <a href="#skills">Compétences</a>
-        <a href="#projects">Projets</a>
-        <a href="#experience">Parcours</a>
-        <a href="#contact" class="cta">Contact</a>
-      </nav>
-      <button id="menuBtn" class="menu-btn">☰</button>
-    </div>
-  </header>
 
-  <main>
-    <section id="hero" class="hero">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <p class="eyebrow">Bonjour — je suis</p>
-          <h1>SAIDANI <span class="accent">Thaseda</span></h1>
-          <p class="lead">
-            <strong>Ingénieure Systèmes d'Information</strong> diplômée en 2024[cite: 8, 11]. 
-            Spécialisée en développement Full-Stack (Laravel, React.js) et passionnée par le Cloud Computing[cite: 9, 16, 133].
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="#contact">Me contacter</a>
-            <a class="btn ghost" href="#projects">Voir mes projets</a>
-          </div>
-
-          <div class="quick-contact">
-            <i class="fas fa-envelope"></i> <a href="mailto:thasedasaidani2000@gmail.com">thasedasaidani2000@gmail.com</a><br>
-            <i class="fas fa-phone"></i> +33 7 44 42 99 35 [cite: 47, 100]
-          </div>
-          
-          <div class="social-links">
-            <a href="https://github.com/thasedasaidani" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/thaseda-saidani-4168302a0" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="card profile-card">
-            <div class="profile-body">
-              <h3>Profil Professionnel</h3>
-              <ul class="meta">
-                <li><i class="fas fa-graduation-cap"></i> Master 2 (Niveau 7 / Bac+5) [cite: 72, 139]</li>
-                <li><i class="fas fa-map-marker-alt"></i> Juvisy-sur-Orge, IDF [cite: 46, 175]</li>
-                <li><i class="fas fa-car"></i> Permis B - Mobile [cite: 49, 180]</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section about">
-      <div class="container">
-        <h2>À propos de moi</h2>
-        <p>Je suis une jeune ingénieure motivée à rejoindre une équipe dynamique pour contribuer à des projets concrets et innovants[cite: 134, 184]. Mon parcours m'a permis de maîtriser le cycle complet de développement, de la conception d'architectures à la mise en ligne[cite: 133, 183].</p>
-      </div>
-    </section>
-
-    <section id="skills" class="section skills">
-      <div class="container">
-        <h2>Compétences Techniques</h2>
-        <div class="skills-grid">
-          <div class="skill-card">
-            <h4><i class="fas fa-code"></i> Développement & Web</h4>
-            <p>Laravel, PHP, React.js, HTML5, CSS3, JavaScript, Bases en Angular, C# [cite: 80, 207]</p>
-          </div>
-          <div class="skill-card">
-            <h4><i class="fas fa-cloud"></i> Cloud & DevOps</h4>
-            <p>Docker, Kubernetes, Flask (API), Linux (Ubuntu), Git, Agile Scrum [cite: 87, 207]</p>
-          </div>
-          <div class="skill-card">
-            <h4><i class="fas fa-database"></i> Bases de données</h4>
-            <p>MySQL, MongoDB, PhpMyAdmin [cite: 88, 207]</p>
-          </div>
-          <div class="skill-card">
-            <h4><i class="fas fa-drafting-compass"></i> Conception & Design</h4>
-            <p>UML, BPMN, Figma, Canva, Trello [cite: 89, 207]</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section projects">
-      <div class="container">
-        <h2>Projets & Réalisations</h2>
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-body">
-              <h3>Architecture Cloud Hybride</h3>
-              <p>Conception et déploiement d'une architecture conforme à la loi 18-07 avec Docker et Kubernetes[cite: 60, 151].</p>
-              <span class="tech-tag">Docker</span> <span class="tech-tag">Kubernetes</span> <span class="tech-tag">Flask</span>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-body">
-              <h3>Application de Messagerie</h3>
-              <p>Développement d'interfaces UI réactives avec React.js, HTML5 et CSS3[cite: 37, 65, 196].</p>
-              <span class="tech-tag">React.js</span> <span class="tech-tag">JavaScript</span>
-            </div>
-          </article>
-          <article class="project-card">
-            <div class="project-body">
-              <h3>Jeu Vidéo 3D</h3>
-              <p>Développement complet sur Unity avec programmation avancée en C#[cite: 66, 160, 197].</p>
-              <span class="tech-tag">Unity</span> <span class="tech-tag">C#</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="certifications" class="section certifications">
-      <div class="container">
-        <h2>Certifications</h2>
-        <div class="cert-list">
-          <div class="cert-item"><i class="fas fa-certificate"></i> Introduction to Cybersecurity Awareness [cite: 15, 205]</div>
-          <div class="cert-item"><i class="fas fa-certificate"></i> Data Science & Analytics [cite: 14, 205]</div>
-          <div class="cert-item"><i class="fas fa-certificate"></i> Agile Project Management [cite: 15, 205]</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="experience" class="section experience">
-      <div class="container">
-        <h2>Expérience Professionnelle</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="time">Mai 2025 — Juillet 2025</span>
-            <h3>Développeuse Back-End (Volontaire) — AriMayi</h3>
-            <p>Développement Laravel, création de diagrammes UML/BPMN et travail en équipe Agile Scrum[cite: 23, 24, 25, 148].</p>
-          </div>
-          <div class="timeline-item">
-            <span class="time">Février 2024 — Septembre 2024</span>
-            <h3>Stagiaire Cloud Computing (PFE) — UMMTO</h3>
-            <p>Optimisation du déploiement en environnement Cloud hybride[cite: 29, 32, 191].</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <div class="container">
-        <h2>Contact</h2>
-        <form class="contact-form" onsubmit="return sendMail(event);">
-          <input type="text" name="name" placeholder="Votre Nom" required>
-          <input type="text" name="company" placeholder="Entreprise">
-          <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
-          <button class="btn primary" type="submit">Envoyer le message</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
+<header>
     <div class="container">
-      <p>© <span id="year"></span> Saidani Thaseda — Ingénieure Systèmes d'Information</p>
+        <nav>
+            <div style="font-weight: bold; font-size: 1.2rem;">TS.<span>PORTFOLIO</span></div>
+            <div class="nav-links">
+                <a href="#about">À propos</a>
+                <a href="#skills">Compétences</a>
+                <a href="#projects">Projets</a>
+                <a href="#experience">Expérience</a>
+            </div>
+        </nav>
     </div>
-  </footer>
+</header>
 
-  <script src="script.js"></script>
+<div class="container">
+    <section class="hero">
+        <div class="hero-text">
+            <p style="color: var(--primary); font-weight: bold;">Bonjour, je suis</p>
+            <h1>SAIDANI <span>Thaseda</span></h1>
+            <p style="font-size: 1.2rem; max-width: 600px;">
+                Ingénieure Systèmes d'Information spécialisée en développement <strong>Full-Stack</strong> et <strong>Cloud Computing</strong>[cite: 9, 11].
+            </p>
+            <div style="margin-top: 15px;">
+                <a href="mailto:thasedasaidani2000@gmail.com" style="color: white; margin-right: 15px;"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="https://linkedin.com/in/thaseda-saidani-4168302a0" style="color: white;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
+            <a href="#projects" class="btn">Voir mes projets</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>À propos de moi</h2>
+        <p>
+            Jeune ingénieure diplômée en 2024, je maîtrise le cycle de vie des applications web, de la conception d'architectures (UML, BPMN) au déploiement Cloud (Docker, Kubernetes)[cite: 16, 24, 60]. Mon approche est centrée sur la qualité du code et la méthodologie Agile[cite: 17, 18, 25].
+        </p>
+    </section>
+
+    <section id="skills">
+        <h2>Compétences Techniques</h2>
+        <div class="grid">
+            <div class="card">
+                <h3><i class="fas fa-code"></i> Développement</h3>
+                <p>PHP (Laravel), JavaScript (React.js), HTML5/CSS3, C# (Unity), Bases Angular[cite: 16, 18, 80].</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
+                <p>Docker, Kubernetes, Flask (API), Linux (Ubuntu), Git, Agile Scrum[cite: 16, 81, 87].</p>
+            </div>
+            <div class="card">
+                <h3><i class="fas fa-database"></i> Bases de données</h3>
+                <p>MySQL, MongoDB, PhpMyAdmin[cite: 16, 18, 88].</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projets & Réalisations</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="time">2024</div>
+                <h3>Cloud Hybride (PFE)</h3>
+                <p>Conception et déploiement d'une architecture optimisée avec Docker et Kubernetes[cite: 32, 60].</p>
+                <span class="tag">Kubernetes</span> <span class="tag">Docker</span> <span class="tag">Flask</span>
+            </div>
+            <div class="card">
+                <div class="time">2023-2024</div>
+                <h3>Messagerie Électronique</h3>
+                <p>Conception et développement d'interfaces UI réactives avec React.js[cite: 37, 65].</p>
+                <span class="tag">React.js</span> <span class="tag">UI/UX</span>
+            </div>
+            <div class="card">
+                <div class="time">2022-2023</div>
+                <h3>Jeu Vidéo 3D</h3>
+                <p>Développement complet sur Unity avec programmation avancée en C#[cite: 66, 160].</p>
+                <span class="tag">Unity 3D</span> <span class="tag">C#</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Expérience Professionnelle</h2>
+        <div class="timeline-item">
+            <div class="time">Mai 2025 - Juil 2025</div>
+            <h3>Développeuse Back-End | AriMayi</h3>
+            <p>Développement de fonctionnalités clés en Laravel (PHP) et modélisation de processus BPMN/UML[cite: 24, 54, 55].</p>
+        </div>
+        <div class="timeline-item">
+            <div class="time">Fév 2024 - Sept 2024</div>
+            <h3>Stagiaire Cloud Computing | UMMTO</h3>
+            <p>Sujet de fin d'études sur l'optimisation des stratégies de déploiement en Cloud hybride[cite: 31, 32, 57].</p>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <p>© <span id="year"></span> Thaseda Saidani - Ingénieure Systèmes d'Information </p>
+</footer>
+
+<script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
