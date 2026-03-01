@@ -3,67 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thaseda SAIDANI | Ingénieure SI</title>
+    <title>Thaseda SAIDANI | Ingénieure Systèmes d'Information</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
+            --bg: #0f172a;
+            --card: #1e293b;
             --primary: #3b82f6;
-            --dark: #0f172a;
-            --light: #f8fafc;
             --accent: #b696ff;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
         }
+
+        * { box-sizing: border-box; scroll-behavior: smooth; }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            background-color: var(--dark);
-            color: var(--light);
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
         }
-        .container { max-width: 1100px; margin: 0 auto; padding: 20px; }
-        
-        /* Header */
+
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+        /* Navigation */
         header {
             background: rgba(15, 23, 42, 0.9);
-            padding: 20px 0;
-            position: sticky; top: 0; z-index: 100;
+            backdrop-filter: blur(10px);
+            position: sticky; top: 0; z-index: 1000;
             border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        nav { display: flex; justify-content: space-between; align-items: center; }
-        .nav-links a { color: white; text-decoration: none; margin-left: 20px; font-weight: 500; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        .logo { font-weight: 700; font-size: 1.2rem; color: var(--primary); }
+        .nav-links a { color: var(--text); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
         .nav-links a:hover { color: var(--primary); }
 
         /* Hero Section */
-        .hero { padding: 80px 0; display: flex; align-items: center; gap: 40px; }
-        .hero-text h1 { font-size: 3.5rem; margin: 0; }
+        .hero { padding: 100px 0 60px; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+        .hero-text h1 { font-size: 3.5rem; margin: 0; line-height: 1.1; }
         .hero-text span { color: var(--primary); }
-        .btn {
-            display: inline-block; padding: 12px 25px; background: var(--primary);
-            color: white; text-decoration: none; border-radius: 8px; margin-top: 20px;
-        }
+        .badge { background: rgba(59, 130, 246, 0.1); color: var(--primary); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; display: inline-block; margin-bottom: 10px; }
+        .contact-bar { margin: 20px 0; display: flex; flex-wrap: wrap; gap: 15px; font-size: 0.9rem; color: var(--text-muted); }
+        .contact-bar i { color: var(--primary); }
+
+        /* Buttons */
+        .btn-group { display: flex; gap: 15px; margin-top: 30px; }
+        .btn { padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-outline { border: 1px solid var(--primary); color: var(--primary); }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
         /* Sections */
-        section { padding: 60px 0; }
-        h2 { border-left: 4px solid var(--primary); padding-left: 15px; margin-bottom: 30px; }
+        section { padding: 80px 0; }
+        h2 { font-size: 2rem; margin-bottom: 40px; position: relative; }
+        h2::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 50px; height: 4px; background: var(--primary); }
 
-        /* Grid Cards */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .card {
-            background: rgba(255,255,255,0.05); padding: 25px; border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1); transition: 0.3s;
+        /* Grid System */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: var(--card); padding: 30px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.05); transition: 0.3s; }
+        .card:hover { border-color: var(--primary); }
+
+        /* Experience Timeline */
+        .timeline { border-left: 2px solid rgba(59, 130, 246, 0.3); padding-left: 30px; margin-left: 10px; }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-item::before { content: ''; position: absolute; left: -37px; top: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--primary); border: 3px solid var(--bg); }
+        .timeline-date { font-size: 0.85rem; color: var(--primary); font-weight: 700; margin-bottom: 5px; }
+        .timeline-content h3 { margin: 0; font-size: 1.2rem; }
+        .timeline-content h4 { margin: 5px 0 15px; color: var(--text-muted); font-weight: 400; font-size: 1rem; }
+        .timeline-content ul { padding-left: 20px; color: var(--text-muted); }
+
+        /* Skills Tags */
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+        .tag { background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; color: var(--text-muted); }
+
+        /* Footer */
+        footer { padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .hero { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .contact-bar { justify-content: center; }
+            .btn-group { justify-content: center; }
         }
-        .card:hover { transform: translateY(-5px); border-color: var(--primary); }
-        
-        .tag {
-            display: inline-block; background: rgba(59, 130, 246, 0.2);
-            color: var(--primary); padding: 4px 10px; border-radius: 4px;
-            font-size: 0.8rem; margin: 5px 5px 0 0;
-        }
-
-        /* Timeline */
-        .timeline-item { margin-bottom: 30px; position: relative; padding-left: 20px; border-left: 2px solid var(--primary); }
-        .time { color: var(--primary); font-weight: bold; font-size: 0.9rem; }
-
-        footer { text-align: center; padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); color: #64748b; }
     </style>
 </head>
 <body>
@@ -71,12 +92,13 @@
 <header>
     <div class="container">
         <nav>
-            <div style="font-weight: bold; font-size: 1.2rem;">TS.<span>PORTFOLIO</span></div>
+            <div class="logo">THASEDA.<span>SI</span></div>
             <div class="nav-links">
-                <a href="#about">À propos</a>
-                <a href="#skills">Compétences</a>
+                <a href="#about">Profil</a>
+                <a href="#experience">Parcours</a>
+                <a href="#skills">Skills</a>
                 <a href="#projects">Projets</a>
-                <a href="#experience">Expérience</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
     </div>
@@ -85,85 +107,168 @@
 <div class="container">
     <section class="hero">
         <div class="hero-text">
-            <p style="color: var(--primary); font-weight: bold;">Bonjour, je suis</p>
-            <h1>SAIDANI <span>Thaseda</span></h1>
-            <p style="font-size: 1.2rem; max-width: 600px;">
-                Ingénieure Systèmes d'Information spécialisée en développement <strong>Full-Stack</strong> et <strong>Cloud Computing</strong>[cite: 9, 11].
-            </p>
-            <div style="margin-top: 15px;">
-                <a href="mailto:thasedasaidani2000@gmail.com" style="color: white; margin-right: 15px;"><i class="fas fa-envelope"></i> Contact</a>
-                <a href="https://linkedin.com/in/thaseda-saidani-4168302a0" style="color: white;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <span class="badge">Disponible pour CDI / CDD / Alternance</span>
+            <h1>SAIDANI <br><span>Thaseda</span></h1>
+            <div class="contact-bar">
+                <span><i class="fas fa-map-marker-alt"></i> Juvisy-sur-Orge, IDF</span> 
+                <span><i class="fas fa-phone"></i> +33 7 44 42 99 35</span> [cite: 7]
+                <span><i class="fas fa-envelope"></i> thasedasaidani2000@gmail.com</span> [cite: 7]
             </div>
-            <a href="#projects" class="btn">Voir mes projets</a>
+            <p style="max-width: 600px; color: var(--text-muted); font-size: 1.1rem;">
+                Ingénieure en Systèmes d'Information (Bac+5) diplômée en 2024. [cite: 10, 28] 
+                Spécialisée en <strong>Développement Full-Stack</strong> et <strong>Cloud Computing</strong> (Docker, Kubernetes). [cite: 10, 11]
+            </p>
+            <div class="btn-group">
+                <a href="CV_Saidani_Thaseda.pdf" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-download"></i> Télécharger CV (PDF)
+                </a>
+                <a href="https://linkedin.com/in/thaseda-saidani-4168302a0" target="_blank" class="btn btn-outline">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+        <div class="hero-img" style="text-align: right;">
+            <div style="width: 300px; height: 300px; background: linear-gradient(45deg, var(--primary), var(--accent)); border-radius: 30px; display: inline-block; position: relative; overflow: hidden;">
+                <i class="fas fa-user-tie" style="font-size: 150px; color: white; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); opacity: 0.5;"></i>
+            </div>
         </div>
     </section>
 
     <section id="about">
-        <h2>À propos de moi</h2>
-        <p>
-            Jeune ingénieure diplômée en 2024, je maîtrise le cycle de vie des applications web, de la conception d'architectures (UML, BPMN) au déploiement Cloud (Docker, Kubernetes)[cite: 16, 24, 60]. Mon approche est centrée sur la qualité du code et la méthodologie Agile[cite: 17, 18, 25].
-        </p>
+        <h2>Profil Professionnel</h2>
+        <div class="card">
+            <p>
+                Passionnée par la conception d'applications web et le déploiement d'architectures cloud. 
+                Je maîtrise le cycle complet de développement, de la modélisation UML/BPMN à l'optimisation des infrastructures hybrides[cite: 17, 20]. 
+                Titulaire d'une attestation de comparabilité <strong>ENIC-NARIC (Niveau 7)</strong>[cite: 28].
+            </p>
+            <div class="tags">
+                <span class="tag"><i class="fas fa-car"></i> Permis B</span> [cite: 8]
+                <span class="tag"><i class="fas fa-language"></i> Français (Courant)</span> [cite: 35]
+                <span class="tag"><i class="fas fa-language"></i> Anglais (Intermédiaire)</span> [cite: 35]
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Expériences & Réalisations</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Mai 2025 — Juillet 2025</div> [cite: 15]
+                <div class="timeline-content">
+                    <h3>Développeuse Back-End (Volontaire)</h3>
+                    <h4>AriMayi — Ville de Paris</h4> [cite: 14]
+                    <ul>
+                        <li>Développement de fonctionnalités critiques avec Laravel (PHP)[cite: 16].</li>
+                        <li>Conception de diagrammes UML et modèles BPMN[cite: 17].</li>
+                        <li>Collaboration Agile Scrum (Daily/Weekly meetings) via Teams[cite: 18].</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Février 2024 — Septembre 2024</div> [cite: 19]
+                <div class="timeline-content">
+                    <h3>Stagiaire Cloud Computing (PFE)</h3>
+                    <h4>UMMTO — Tizi Ouzou</h4> [cite: 19]
+                    <ul>
+                        <li>Optimisation des stratégies de déploiement en environnement Cloud hybride[cite: 20].</li>
+                        <li>Architecture conforme à la loi 18-07 avec Docker, Kubernetes et Flask[cite: 21].</li>
+                        <li>Gestion de bases de données MongoDB[cite: 21].</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="skills">
         <h2>Compétences Techniques</h2>
         <div class="grid">
             <div class="card">
-                <h3><i class="fas fa-code"></i> Développement</h3>
-                <p>PHP (Laravel), JavaScript (React.js), HTML5/CSS3, C# (Unity), Bases Angular[cite: 16, 18, 80].</p>
+                <i class="fas fa-layer-group" style="color: var(--primary); font-size: 2rem; margin-bottom: 15px;"></i>
+                <h3>Web & Backend</h3>
+                <p>Laravel, PHP, React.js, HTML5, CSS3, JavaScript, bases en Angular, C#[cite: 35].</p>
             </div>
             <div class="card">
-                <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
-                <p>Docker, Kubernetes, Flask (API), Linux (Ubuntu), Git, Agile Scrum[cite: 16, 81, 87].</p>
+                <i class="fas fa-server" style="color: var(--accent); font-size: 2rem; margin-bottom: 15px;"></i>
+                <h3>Cloud & DevOps</h3>
+                <p>Docker, Kubernetes, Flask, Linux (Ubuntu), Git, Agile Scrum[cite: 35].</p>
             </div>
             <div class="card">
-                <h3><i class="fas fa-database"></i> Bases de données</h3>
-                <p>MySQL, MongoDB, PhpMyAdmin[cite: 16, 18, 88].</p>
+                <i class="fas fa-database" style="color: #10b981; font-size: 2rem; margin-bottom: 15px;"></i>
+                <h3>Bases de données</h3>
+                <p>MySQL, MongoDB, PhpMyAdmin[cite: 35].</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-project-diagram" style="color: #f59e0b; font-size: 2rem; margin-bottom: 15px;"></i>
+                <h3>Conception</h3>
+                <p>UML, BPMN, Figma, Canva, Trello[cite: 35].</p>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2>Projets & Réalisations</h2>
+        <h2>Autres Projets</h2>
         <div class="grid">
             <div class="card">
-                <div class="time">2024</div>
-                <h3>Cloud Hybride (PFE)</h3>
-                <p>Conception et déploiement d'une architecture optimisée avec Docker et Kubernetes[cite: 32, 60].</p>
-                <span class="tag">Kubernetes</span> <span class="tag">Docker</span> <span class="tag">Flask</span>
+                <h3>Application de Messagerie</h3>
+                <p>Développement d'interfaces UI avec React.js et JavaScript[cite: 24].</p>
             </div>
             <div class="card">
-                <div class="time">2023-2024</div>
-                <h3>Messagerie Électronique</h3>
-                <p>Conception et développement d'interfaces UI réactives avec React.js[cite: 37, 65].</p>
-                <span class="tag">React.js</span> <span class="tag">UI/UX</span>
-            </div>
-            <div class="card">
-                <div class="time">2022-2023</div>
                 <h3>Jeu Vidéo 3D</h3>
-                <p>Développement complet sur Unity avec programmation avancée en C#[cite: 66, 160].</p>
-                <span class="tag">Unity 3D</span> <span class="tag">C#</span>
+                <p>Développement sur Unity avec programmation avancée en C#[cite: 25].</p>
+            </div>
+            <div class="card">
+                <h3>E-commerce & Agence</h3>
+                <p>Applications Full-Stack (PHP, MySQL, Bootstrap)[cite: 26].</p>
             </div>
         </div>
     </section>
 
-    <section id="experience">
-        <h2>Expérience Professionnelle</h2>
-        <div class="timeline-item">
-            <div class="time">Mai 2025 - Juil 2025</div>
-            <h3>Développeuse Back-End | AriMayi</h3>
-            <p>Développement de fonctionnalités clés en Laravel (PHP) et modélisation de processus BPMN/UML[cite: 24, 54, 55].</p>
+    <section id="education">
+        <div class="grid">
+            <div>
+                <h2>Formation</h2>
+                <div class="timeline-item" style="margin-bottom: 20px;">
+                    <div class="timeline-date">2022 — 2024</div> [cite: 31]
+                    <div class="timeline-content">
+                        <h3 style="font-size: 1rem;">Master en Ingénierie des Systèmes d'Information</h3> [cite: 28]
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">UMMTO — Niveau 7 (Bac+5)</p> [cite: 28]
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2019 — 2022</div> [cite: 32]
+                    <div class="timeline-content">
+                        <h3 style="font-size: 1rem;">Licence en Systèmes Informatiques</h3> [cite: 29]
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">UMMTO</p> [cite: 30]
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Certifications</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px;"><i class="fas fa-certificate" style="color: var(--primary); margin-right: 10px;"></i> Introduction à la Cybersecurity [cite: 33]</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-certificate" style="color: var(--primary); margin-right: 10px;"></i> Data Science & Analytics [cite: 33]</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-certificate" style="color: var(--primary); margin-right: 10px;"></i> Agile Project Management [cite: 33]</li>
+                </ul>
+            </div>
         </div>
-        <div class="timeline-item">
-            <div class="time">Fév 2024 - Sept 2024</div>
-            <h3>Stagiaire Cloud Computing | UMMTO</h3>
-            <p>Sujet de fin d'études sur l'optimisation des stratégies de déploiement en Cloud hybride[cite: 31, 32, 57].</p>
+    </section>
+
+    <section id="contact" style="text-align: center;">
+        <h2>Me contacter</h2>
+        <p>Intéressé par mon profil ? N'hésitez pas à m'envoyer un message.</p>
+        <div class="card" style="max-width: 500px; margin: 0 auto;">
+            <p><i class="fas fa-envelope"></i> thasedasaidani2000@gmail.com</p> [cite: 7]
+            <p><i class="fas fa-phone"></i> +33 7 44 42 99 35</p> [cite: 7]
+            <a href="mailto:thasedasaidani2000@gmail.com" class="btn btn-primary" style="margin-top: 15px; width: 100%; justify-content: center;">Envoyer un e-mail</a>
         </div>
     </section>
 </div>
 
 <footer>
-    <p>© <span id="year"></span> Thaseda Saidani - Ingénieure Systèmes d'Information </p>
+    <div class="container">
+        <p>© <span id="year"></span> SAIDANI Thaseda — Ingénieure SI</p>
+    </div>
 </footer>
 
 <script>
