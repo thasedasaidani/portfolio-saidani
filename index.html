@@ -1,43 +1,66 @@
-<main>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Saidani Thaseda — Ingénieure SI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#hero">Saidani Thaseda</a>
+      <nav class="nav" id="nav">
+        <a href="#about">À propos</a>
+        <a href="#skills">Compétences</a>
+        <a href="#projects">Projets</a>
+        <a href="#experience">Parcours</a>
+        <a href="#contact" class="cta">Contact</a>
+      </nav>
+      <button id="menuBtn" class="menu-btn">☰</button>
+    </div>
+  </header>
+
+  <main>
     <section id="hero" class="hero">
       <div class="container hero-grid">
         <div class="hero-left">
           <p class="eyebrow">Bonjour — je suis</p>
           <h1>SAIDANI <span class="accent">Thaseda</span></h1>
-          <p class="lead"><strong>Ingénieure Systèmes d'Information</strong> spécialisée en Développement Web & Cloud. Passionnée par la conception d'architectures robustes et l'optimisation logicielle.</p>
+          <p class="lead">
+            <strong>Ingénieure Systèmes d'Information</strong> diplômée en 2024[cite: 8, 11]. 
+            Spécialisée en développement Full-Stack (Laravel, React.js) et passionnée par le Cloud Computing[cite: 9, 16, 133].
+          </p>
 
           <div class="hero-actions">
             <a class="btn primary" href="#contact">Me contacter</a>
-            <a class="btn ghost" href="#projects">Explorer mes projets</a>
+            <a class="btn ghost" href="#projects">Voir mes projets</a>
           </div>
 
           <div class="quick-contact">
-            <a href="mailto:thasedasaidani2000@gmail.com">thasedasaidani2000@gmail.com</a> · <a href="tel:+33744429935">+33 7 44 42 99 35</a>
+            <i class="fas fa-envelope"></i> <a href="mailto:thasedasaidani2000@gmail.com">thasedasaidani2000@gmail.com</a><br>
+            <i class="fas fa-phone"></i> +33 7 44 42 99 35 [cite: 47, 100]
           </div>
-
-          <div class="socials">
-            <a href="https://github.com/thasedasaidani" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/thaseda-saidani-4168302a0/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          
+          <div class="social-links">
+            <a href="https://github.com/thasedasaidani" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/thaseda-saidani-4168302a0" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
           </div>
         </div>
 
         <div class="hero-right">
           <div class="card profile-card">
-            <img src="assets/img/photo_saidani.jpg" alt="Thaseda Saidani" class="avatar">
             <div class="profile-body">
-              <h3>Thaseda Saidani</h3>
-              <p>Diplômée Master 2 (Niveau 7 / Bac+5). Expertise en PHP/Laravel & Cloud hybride.</p>
+              <h3>Profil Professionnel</h3>
               <ul class="meta">
-                <li><i class="fas fa-map-marker-alt"></i> Île‑de‑France (Juvisy-sur-Orge)</li>
-                <li><i class="fas fa-car"></i> Permis B - Mobilité France entière</li>
-                <li><i class="fas fa-check-circle"></i> Attestation ENIC-NARIC obtenue</li>
+                <li><i class="fas fa-graduation-cap"></i> Master 2 (Niveau 7 / Bac+5) [cite: 72, 139]</li>
+                <li><i class="fas fa-map-marker-alt"></i> Juvisy-sur-Orge, IDF [cite: 46, 175]</li>
+                <li><i class="fas fa-car"></i> Permis B - Mobile [cite: 49, 180]</li>
               </ul>
             </div>
-          </div>
-          <div class="highlights">
-            <div><strong>Backend</strong><span>Laravel • PHP • Flask</span></div>
-            <div><strong>Frontend</strong><span>React.js • Bootstrap • JS</span></div>
-            <div><strong>DevOps/Tools</strong><span>Docker • Kubernetes • Postman</span></div>
           </div>
         </div>
       </div>
@@ -46,12 +69,7 @@
     <section id="about" class="section about">
       <div class="container">
         <h2>À propos de moi</h2>
-         <p>Ingénieure diplômée en 2024, j'accompagne les projets de la phase de <strong>conception (UML, BPMN)</strong> jusqu'au <strong>déploiement cloud</strong>. Mon approche est centrée sur la qualité du code, la documentation technique et le respect des méthodologies Agiles.</p>
-        <div class="stats-grid">
-          <div class="stat"><h3>Expertise</h3><p>Conception d'architectures & APIs REST</p></div>
-          <div class="stat"><h3>Certifications</h3><p>Cybersecurity, Data Science, Agile PM</p></div>
-          <div class="stat"><h3>Méthode</h3><p>Agile Scrum — Git / Postman / Trello</p></div>
-        </div>
+        <p>Je suis une jeune ingénieure motivée à rejoindre une équipe dynamique pour contribuer à des projets concrets et innovants[cite: 134, 184]. Mon parcours m'a permis de maîtriser le cycle complet de développement, de la conception d'architectures à la mise en ligne[cite: 133, 183].</p>
       </div>
     </section>
 
@@ -60,20 +78,20 @@
         <h2>Compétences Techniques</h2>
         <div class="skills-grid">
           <div class="skill-card">
-            <h4>Développement Web</h4>
-            <p>PHP (Laravel) • JavaScript (React.js) • HTML5/CSS3 • Bootstrap • Bases Angular</p>
+            <h4><i class="fas fa-code"></i> Développement & Web</h4>
+            <p>Laravel, PHP, React.js, HTML5, CSS3, JavaScript, Bases en Angular, C# [cite: 80, 207]</p>
           </div>
           <div class="skill-card">
-            <h4>Conception & Architecture</h4>
-            <p>UML (Séquence, Classe) • BPMN • Modélisation de bases de données (MySQL, MongoDB)</p>
+            <h4><i class="fas fa-cloud"></i> Cloud & DevOps</h4>
+            <p>Docker, Kubernetes, Flask (API), Linux (Ubuntu), Git, Agile Scrum [cite: 87, 207]</p>
           </div>
           <div class="skill-card">
-            <h4>Cloud & Infrastructures</h4>
-            <p>Docker • Kubernetes • Flask • Linux (Ubuntu) • Architecture Cloud Hybride</p>
+            <h4><i class="fas fa-database"></i> Bases de données</h4>
+            <p>MySQL, MongoDB, PhpMyAdmin [cite: 88, 207]</p>
           </div>
           <div class="skill-card">
-            <h4>Logiciel & Outils</h4>
-            <p>C# (Unity 3D) • Git • Postman • Figma • Canva • Suite Microsoft</p>
+            <h4><i class="fas fa-drafting-compass"></i> Conception & Design</h4>
+            <p>UML, BPMN, Figma, Canva, Trello [cite: 89, 207]</p>
           </div>
         </div>
       </div>
@@ -83,97 +101,79 @@
       <div class="container">
         <h2>Projets & Réalisations</h2>
         <div class="projects-grid">
-          
           <article class="project-card">
-            <div class="project-screenshot" style="background-color: #1a2538; display:flex; align-items:center; justify-content:center; color: #3b82f6;">
-               <i class="fas fa-cloud" style="font-size: 3rem;"></i>
-            </div>
             <div class="project-body">
-              <h3>Architecture Cloud Hybride (PFE)</h3>
-              <p>Conception d'une infrastructure conforme à la loi 18‑07. Déploiement via Docker/Kubernetes et gestion API avec Flask.</p>
-              <p class="meta">Docker • Kubernetes • Flask • MongoDB</p>
+              <h3>Architecture Cloud Hybride</h3>
+              <p>Conception et déploiement d'une architecture conforme à la loi 18-07 avec Docker et Kubernetes[cite: 60, 151].</p>
+              <span class="tech-tag">Docker</span> <span class="tech-tag">Kubernetes</span> <span class="tech-tag">Flask</span>
             </div>
           </article>
-
           <article class="project-card">
-            <div class="project-screenshot" style="background-color: #1a2538; display:flex; align-items:center; justify-content:center; color: #b696ff;">
-               <i class="fas fa-comments" style="font-size: 3rem;"></i>
-            </div>
             <div class="project-body">
-              <h3>Application de Messagerie Électronique</h3>
-              <p>Développement de l'interface utilisateur (UI) réactive et intégration des flux de données en temps réel.</p>
-              <p class="meta">React.js • JavaScript • CSS3</p>
+              <h3>Application de Messagerie</h3>
+              <p>Développement d'interfaces UI réactives avec React.js, HTML5 et CSS3[cite: 37, 65, 196].</p>
+              <span class="tech-tag">React.js</span> <span class="tech-tag">JavaScript</span>
             </div>
           </article>
-
           <article class="project-card">
-            <div class="project-screenshot" style="background-color: #1a2538; display:flex; align-items:center; justify-content:center; color: #10b981;">
-               <i class="fas fa-plane" style="font-size: 3rem;"></i>
-            </div>
             <div class="project-body">
-              <h3>Agence de Voyage Virtuelle (L3)</h3>
-              <p>Application complète incluant la gestion des réservations et l'architecture logicielle documentée (UML).</p>
-              <p class="meta">PHP • MySQL • Bootstrap • JS</p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <div class="project-screenshot" style="background-color: #1a2538; display:flex; align-items:center; justify-content:center; color: #f59e0b;">
-               <i class="fas fa-gamepad" style="font-size: 3rem;"></i>
-            </div>
-            <div class="project-body">
-              <h3>Jeu Vidéo 3D - Unity</h3>
-              <p>Programmation des mécaniques de jeu et de la logique de programmation avancée en C#.</p>
-              <p class="meta">Unity 3D • C#</p>
+              <h3>Jeu Vidéo 3D</h3>
+              <p>Développement complet sur Unity avec programmation avancée en C#[cite: 66, 160, 197].</p>
+              <span class="tech-tag">Unity</span> <span class="tech-tag">C#</span>
             </div>
           </article>
         </div>
       </div>
     </section>
-   <section id="certifications" class="section certifications">
+
+    <section id="certifications" class="section certifications">
       <div class="container">
         <h2>Certifications</h2>
-        <div class="stats-grid">
-          <div class="stat">
-            <i class="fas fa-shield-alt"></i>
-            <h4>Cybersécurité</h4>
-            <p>Introduction à la Cybersecurity (Cisco/Network Academy)</p>
+        <div class="cert-list">
+          <div class="cert-item"><i class="fas fa-certificate"></i> Introduction to Cybersecurity Awareness [cite: 15, 205]</div>
+          <div class="cert-item"><i class="fas fa-certificate"></i> Data Science & Analytics [cite: 14, 205]</div>
+          <div class="cert-item"><i class="fas fa-certificate"></i> Agile Project Management [cite: 15, 205]</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section experience">
+      <div class="container">
+        <h2>Expérience Professionnelle</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="time">Mai 2025 — Juillet 2025</span>
+            <h3>Développeuse Back-End (Volontaire) — AriMayi</h3>
+            <p>Développement Laravel, création de diagrammes UML/BPMN et travail en équipe Agile Scrum[cite: 23, 24, 25, 148].</p>
           </div>
-          <div class="stat">
-            <i class="fas fa-chart-line"></i>
-            <h4>Data Science</h4>
-            <p>Data Science & Analytics / Presenting Data</p>
-          </div>
-          <div class="stat">
-            <i class="fas fa-tasks"></i>
-            <h4>Gestion de Projet</h4>
-            <p>Agile Project Management & Scrum</p>
+          <div class="timeline-item">
+            <span class="time">Février 2024 — Septembre 2024</span>
+            <h3>Stagiaire Cloud Computing (PFE) — UMMTO</h3>
+            <p>Optimisation du déploiement en environnement Cloud hybride[cite: 29, 32, 191].</p>
           </div>
         </div>
       </div>
     </section>
-    <section id="experience" class="section experience">
+
+    <section id="contact" class="section contact">
       <div class="container">
-        <h2>Expérience & Formation</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="time">Mai 2025 — Juil 2025</span>
-            <h3>Développeuse Backend (Volontaire) — ARIMAYI (Paris)</h3>
-            <p>Développement de fonctionnalités critiques en <strong>Laravel</strong>. Modélisation BPMN et UML. Collaboration quotidienne en mode <strong>Agile Scrum</strong>.</p>
-          </div>
-
-          <div class="timeline-item">
-            <span class="time">2022 — 2024</span>
-            <h3>Master Ingénierie des Systèmes d'Information — UMMTO</h3>
-            <p><strong>Niveau 7 (Bac+5)</strong>. Spécialisation Cloud et Architecture. PFE sur l'optimisation des déploiements hybrides.</p>
-          </div>
-
-          <div class="timeline-item">
-            <span class="time">2019 — 2022</span>
-            <h3>Licence Systèmes Informatiques — UMMTO</h3>
-            <p>Bases solides en algorithmique, développement web et bases de données relationnelles.</p>
-          </div>
-        </div>
+        <h2>Contact</h2>
+        <form class="contact-form" onsubmit="return sendMail(event);">
+          <input type="text" name="name" placeholder="Votre Nom" required>
+          <input type="text" name="company" placeholder="Entreprise">
+          <textarea name="message" rows="5" placeholder="Votre message..." required></textarea>
+          <button class="btn primary" type="submit">Envoyer le message</button>
+        </form>
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Saidani Thaseda — Ingénieure Systèmes d'Information</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

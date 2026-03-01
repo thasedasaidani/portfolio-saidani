@@ -1,12 +1,14 @@
-// Small interactions: mobile menu, year, basic form mailto handling
 document.addEventListener('DOMContentLoaded', function(){
-  // year
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // 1. Mise à jour de l'année
+  const yearElement = document.getElementById('year');
+  if(yearElement) yearElement.textContent = new Date().getFullYear();
 
-  // mobile menu
+  // 2. Gestion du menu mobile
   const menuBtn = document.getElementById('menuBtn');
   const nav = document.getElementById('nav');
+
   menuBtn.addEventListener('click', () => {
+    // On utilise un toggle de classe ou un style direct
     if(nav.style.display === 'flex') {
       nav.style.display = 'none';
     } else {
@@ -15,23 +17,25 @@ document.addEventListener('DOMContentLoaded', function(){
       nav.style.position = 'absolute';
       nav.style.right = '20px';
       nav.style.top = '60px';
-      nav.style.background = 'rgba(10,14,20,0.9)';
+      nav.style.background = 'rgba(10,14,20,0.95)';
       nav.style.padding = '12px';
       nav.style.borderRadius = '10px';
+      nav.style.zIndex = '100';
     }
   });
 });
 
-// Simple mailto fallback to prefill subject/body for the contact form
+// 3. Fonction d'envoi de mail
 function sendMail(e){
   e.preventDefault();
   const form = e.target;
   const name = encodeURIComponent(form.name.value || '');
   const company = encodeURIComponent(form.company.value || '');
   const message = encodeURIComponent(form.message.value || '');
-  const subject = encodeURIComponent(`Candidature alternance - ${name}`);
+  
+  const subject = encodeURIComponent(`Contact Portfolio - ${name}`);
   const body = encodeURIComponent(`Nom: ${name}\nEntreprise: ${company}\n\nMessage:\n${message}`);
-  const mailto = `mailto:thasedasaidani2000@gmail.com?subject=${subject}&body=${body}`;
-  window.location.href = mailto;
+  
+  window.location.href = `mailto:thasedasaidani2000@gmail.com?subject=${subject}&body=${body}`;
   return false;
 }
