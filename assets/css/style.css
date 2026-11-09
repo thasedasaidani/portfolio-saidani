@@ -29,7 +29,7 @@ body{
   backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;}
 .brand{font-weight:700;color:var(--accent2);text-decoration:none;font-size:1.2rem;}
 .brand span{color:var(--accent1);}
 .nav{display:flex;gap:18px;align-items:center}
@@ -109,4 +109,39 @@ h1{font-size:36px;margin:4px 0 12px; line-height:1.2;}
   .nav{display:none}
   .menu-btn{display:block}
   .highlights{grid-template-columns:1fr}
+}
+/* ---------- Ajouts ---------- */
+.hero-actions{flex-wrap:wrap}
+.lead{max-width:56ch}
+
+/* Étiquettes du profil */
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;font-size:13px;border-radius:8px;
+     background:var(--glass);border:1px solid rgba(255,255,255,0.1)}
+
+/* Cartes de compétences */
+.skill-card p{color:var(--muted);margin:0}
+.skill-card small{color:var(--muted);font-weight:400;font-size:0.8rem}
+
+/* Cartes de projets */
+.project-body{display:flex;flex-direction:column;gap:12px;height:100%}
+.project-body p strong{color:#fff}
+.stack{display:flex;flex-wrap:wrap;gap:6px}
+.stack span{font-size:12px;padding:3px 8px;border-radius:6px;color:var(--accent2);
+            background:rgba(87,148,246,0.1);border:1px solid rgba(87,148,246,0.25)}
+.project-link{margin-top:auto;color:var(--accent1);text-decoration:none;font-weight:600;font-size:0.9rem}
+.project-link:hover{text-decoration:underline}
+
+/* Menu mobile ouvert */
+@media(max-width:900px){
+  .nav.open{display:flex;flex-direction:column;position:absolute;right:20px;top:60px;
+            background:rgba(10,14,20,0.97);padding:16px;border-radius:10px;z-index:100;
+            border:1px solid rgba(255,255,255,0.1)}
+}
+
+/* Marges réduites sur téléphone */
+@media(max-width:600px){
+  .container{padding:16px}
+  .header-inner{padding:12px 16px}
+  h1{font-size:30px}
 }
